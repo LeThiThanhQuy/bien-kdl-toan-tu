@@ -15,18 +15,18 @@
         <td align="center"><select id="from">
                 <option value="vnd">Việt Nam</option>
                 <option value="usd">USD</option>
-                <option>Trung Quốc</option>
-                <option>Nhật Bản</option>
-                <option>Hàn Quốc</option>
+                <option value="cny">Trung Quốc</option>
+                <option value="yen">Nhật Bản</option>
+                <option value="won">Hàn Quốc</option>
                 <option>Singapo</option>
             </select></td>
         <td align="center"><select id="to">
                 <option value="vnd">Việt Nam</option>
-                <option selected>USD</option>
-                <option>Trung Quốc</option>
-                <option>Nhật Bản</option>
-                <option>Hàn QUốc</option>
-                <option>Singapo</option>
+                <option value="usd" selected>USD</option>
+                <option value="te">Trung Quốc</option>
+                <option value="yen">Nhật Bản</option>
+                <option value="won">Hàn QUốc</option>
+                <option value="sing">Singapo</option>
          </select></td>
         <td><input type="submit" value="Convert" onclick="doiTien()"></td>
 </table>
@@ -45,8 +45,112 @@ function doiTien() {
 
         result = amount * 23000;
     }
+    if(fromc.value =="usd" && toc.value=="te"){
+        result = amount * 7;
+    }
+    if(fromc.value =="usd" && toc.value=="yen"){
+        result = amount * 107.6;
+    }
+    if(fromc.value =="usd" && toc.value=="won"){
+        result = amount * 1186;
+    }
+    if(fromc.value =="usd" && toc.value=="sing"){
+        result = amount * 1.4;
+    }
+
+    if(fromc.value == "vnd" && toc.value == "usd"){
+
+        result = amount * 4.3*10**(-5);
+    }
+    if(fromc.value =="vnd" && toc.value=="te"){
+        result = amount * 3*10**(-4);
+    }
+    if(fromc.value =="vnd" && toc.value=="yen"){
+        result = amount * 4.6*10**(-3);
+    }
+    if(fromc.value =="vnd" && toc.value=="won"){
+        result = amount * 0.051;
+    }
+    if(fromc.value =="vnd" && toc.value=="sing"){
+        result = amount * 6.10**(-5);
+    }
+
+
+    if(fromc.value == "te" && toc.value == "usd"){
+
+        result = amount * 0.144;
+    }
+    if(fromc.value =="te" && toc.value=="vnd"){
+        result = amount * 3338;
+    }
+    if(fromc.value =="te" && toc.value=="yen"){
+        result = amount * 15.426;
+    }
+    if(fromc.value =="te" && toc.value=="won"){
+        result = amount * 169.847;
+    }
+    if(fromc.value =="te" && toc.value=="sing"){
+        result = amount * 0.199;
+    }
+
+    if(fromc.value == "yen" && toc.value == "usd"){
+
+        result = amount * 0.0093;
+    }
+    if(fromc.value =="yen" && toc.value=="vnd"){
+        result = amount * 216.37;
+    }
+    if(fromc.value =="yen" && toc.value=="te"){
+        result = amount * 0.065;
+    }
+    if(fromc.value =="yen" && toc.value=="won"){
+        result = amount * 11.011;
+    }
+    if(fromc.value =="yen" && toc.value=="sing"){
+        result = amount * 0.0129;
+    }
+
+    if(fromc.value == "won" && toc.value == "usd"){
+
+        result = amount * 845*10**(-3);
+    }
+    if(fromc.value =="won" && toc.value=="vnd"){
+        result = amount * 19.65;
+    }
+    if(fromc.value =="won" && toc.value=="te"){
+        result = amount * 0.00589;
+    }
+    if(fromc.value =="won" && toc.value=="yen"){
+        result = amount * 0.0908;
+    }
+    if(fromc.value =="won" && toc.value=="sing"){
+        result = amount * 0.00117;
+    }
+
+    if(fromc.value == "sing" && toc.value == "usd"){
+
+        result = amount * 0.7226;
+    }
+    if(fromc.value =="sing" && toc.value=="vnd"){
+        result = amount * 16804.2;
+    }
+    if(fromc.value =="sing" && toc.value=="te"){
+        result = amount *5.0347;
+    }
+    if(fromc.value =="sing" && toc.value=="yen"){
+        result = amount * 77.663;
+    }
+    if(fromc.value =="sing" && toc.value=="won"){
+        result = amount * 855.124;
+    }
+
+
     //hien thi ket qua
-    document.getElementById("result").innerHTML = ("So tien doi ra la " + result);
+    document.getElementById("result").innerHTML = ("Số tiền là: " + result);
+
+
+
+
 }
 </script>
 
