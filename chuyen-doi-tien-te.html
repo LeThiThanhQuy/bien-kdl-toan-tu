@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi tiền tệ</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th width="200"><b>Amount</b></th>
+        <th width="200"><b>From Currency</b></th>
+        <th width="200"><b>To Currency</b></th>
+    </tr>
+        <td align="center"><input type="text" id="ahihi"></td>
+        <td align="center"><select id="from">
+                <option value="vnd">Việt Nam</option>
+                <option value="usd">USD</option>
+                <option>Trung Quốc</option>
+                <option>Nhật Bản</option>
+                <option>Hàn Quốc</option>
+                <option>Singapo</option>
+            </select></td>
+        <td align="center"><select id="to">
+                <option value="vnd">Việt Nam</option>
+                <option selected>USD</option>
+                <option>Trung Quốc</option>
+                <option>Nhật Bản</option>
+                <option>Hàn QUốc</option>
+                <option>Singapo</option>
+         </select></td>
+        <td><input type="submit" value="Convert" onclick="doiTien()"></td>
+</table>
+<p id="result"></p>
+
+<script>
+function doiTien() {
+    //input
+    let amount = Number(document.getElementById("ahihi").value);
+    let fromc = document.getElementById("from");
+    let toc = document.getElementById("to");
+    let result = 0;
+    //doi tien
+    // console.log(fromc.innerHTML + " "+toc.innerHTML);
+    if(fromc.value == "usd" && toc.value == "vnd"){
+
+        result = amount * 23000;
+    }
+    //hien thi ket qua
+    document.getElementById("result").innerHTML = ("So tien doi ra la " + result);
+}
+</script>
+
+</body>
+</html>
