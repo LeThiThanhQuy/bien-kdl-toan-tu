@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng máy tính</title>
+</head>
+<body>
+<input type="text" id="so1">
+<input type="text" id="so2"><br>
+<button onclick="action('+')" id="add" >Addition(+)</button>
+<button onclick="action('-')" id="sub">Subtraction(-)</button>
+<button onclick="action('*')" id="mul">Multiplication(X)</button>
+<button onclick="action('/')" id="div">Division(/)</button>
+<div id="khung"></div>
+<script>
+
+    function action(phepTinh) {
+        let a = parseFloat(document.getElementById("so1").value);
+        let b = parseFloat(document.getElementById("so2").value);
+        let result = 0;
+        switch (phepTinh) {
+            case '+':
+                result =a + b;
+                break;
+            case '-':
+                result = a - b;
+                break;
+            case '*':
+                result = a * b;
+                break;
+            case '/':
+                result = a / b;
+                break;
+        }
+        document.getElementById("khung").innerHTML = "Result Division: " + result;
+    }
+</script>
+</body>
+</html>
